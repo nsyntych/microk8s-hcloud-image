@@ -31,5 +31,6 @@ jobs:
           target: .
         env:
           PACKER_LOG: 1
+          HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
 
       # additional steps to process artifacts
