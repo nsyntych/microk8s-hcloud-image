@@ -21,18 +21,15 @@ jobs:
           command: validate
           arguments: -syntax-only
           target: .
-        env:
-          HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
 
       # build artifact
       - name: Build Artifact
         uses: hashicorp/packer-github-actions@master
         with:
           command: build
-          arguments: "-color=false -on-error=abort"
+          arguments: "-color=false -on-error=abort var=\"hcloud_token=${{ secrets.HCLOUD_TOKEN }}\""
           target: .
         env:
           PACKER_LOG: 1
-          HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
 
       # additional steps to process artifacts
