@@ -3,7 +3,8 @@
 name: Packer
 
 on:
-  push:
+  release:
+    types: [created]
 
 jobs:
   packer:
