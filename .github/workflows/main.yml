@@ -27,9 +27,10 @@ jobs:
         uses: hashicorp/packer-github-actions@master
         with:
           command: build
-          arguments: "-color=false -on-error=abort var='hcloud_token=${{ secrets.HCLOUD_TOKEN }}'"
+          arguments: "-color=false -on-error=abort"
           target: .
         env:
           PACKER_LOG: 1
+          HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
 
       # additional steps to process artifacts
