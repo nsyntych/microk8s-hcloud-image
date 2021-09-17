@@ -21,6 +21,8 @@ jobs:
           command: validate
           arguments: -syntax-only
           target: .
+        env:
+          HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
 
       # build artifact
       - name: Build Artifact
