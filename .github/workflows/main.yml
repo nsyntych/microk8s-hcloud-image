@@ -20,7 +20,7 @@ jobs:
         with:
           command: validate
           arguments: -syntax-only
-          target: hcloud-ubuntu-microk8s.pkr.hcl
+          target: .
 
       # build artifact
       - name: Build Artifact
