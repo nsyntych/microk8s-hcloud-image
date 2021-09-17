@@ -18,14 +18,6 @@ variable "snapshot_name"{
     default = "microk8s-image"
 }
 
-// variable ""{
-//     default = ""
-// }
-
-// variable ""{
-//     default = ""
-// }
-
-// variable ""{
-//     default = ""
-// }
+variable "release_version" {
+    default = "${env("RELEASE_VERSION")}"
+}
